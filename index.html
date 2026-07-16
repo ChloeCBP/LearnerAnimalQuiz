@@ -287,7 +287,7 @@ const Q = [
 ];
 
 const INTERESTS = ["Gaming","Books","Movies","Anime","Theater","Coding","Music","Crafts","Travel","Sports","Art/Drawing","Cooking/Baking","Animals & Pets","Board games/D&D"];
-const COHORTS = ["Aurora","Cascade","Harbor","Meadow","Summit","Wildwood"];
+const COHORTS = ["Angie","Chloe","Georgia","Kimberly","Kristi - Early","Kristi - Late","Rudi"];
 const TIMEZONES = [
   ["-10","Hawaii (UTC-10)"],["-8","Pacific (UTC-8)"],["-7","Mountain (UTC-7)"],["-6","Central (UTC-6)"],
   ["-5","Eastern (UTC-5)"],["-4","Atlantic / Caracas (UTC-4)"],["-3","Argentina / Brazil east (UTC-3)"],
@@ -348,7 +348,7 @@ function renderLanding(){
         <option value="MS" ${b.band==='MS'?'selected':''}>Middle School (6-8)</option>
         <option value="HS" ${b.band==='HS'?'selected':''}>High School (9-12)</option>
       </select></label>
-    <label class="field"><span class="lab">Your cohort</span>
+    <label class="field"><span class="lab">Your coach</span>
       <select id="ch"><option value="">Choose one…</option>${COHORTS.map(c=>`<option ${b.cohort===c?'selected':''}>${c}</option>`).join('')}</select></label>
     <label class="field"><span class="lab">Your time zone</span>
       <select id="tz"><option value="">Choose one…</option>${TIMEZONES.map(([v,l])=>`<option value="${v}" ${b.tz===v?'selected':''}>${l}</option>`).join('')}</select></label>
