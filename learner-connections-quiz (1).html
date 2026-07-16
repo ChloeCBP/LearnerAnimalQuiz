@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Find Your Animal · Prisma</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFSElEQVR42u2az2+URRjHP8/Mu7AtpWlpAClJgdhQGiBICJA0NKQNTSpSkS5eMAFNNCTiQSQoFURLPHjTFOLdi5H4D1A4GROjieDRKBh6M8RoC+xud7v7zniYd2m3u7R0u7st7fsmk7Q7874z72e+z495duWD1rRlGV+KZX6FAEIAIYAQQAggBBACCAGEAEIAIYDqX6JcW5YAREEm5dpCQliQqZWG8YewvVuxvVsx/tB9thCXV/2tB+PDylp4/XP31r//YDC+68MucQVoDYlR6D2radwoNG4UXj6rSY66viVtAqIgFYcte4Tu0xprwBroPq3ZvEdIxavvD6quAGshdkXjrXB/W8BbAceveFi7hBWgPCf9zlOK1v0K4zvHp5TzCS/uFzpPKRL/ubFLCoAoyIzD2s3CkfMe1uRLXZQzhVfOe6zdImTGq2cK1QEgMDEOxz7R1DY46Yvk91sLqxrcmInx/P7nGoDSkByD3X2K3X2T0i82zvjBuCOK5Fh1coPKAhDwM1DbCP2XNdiZd1aCPKD/U01to7sXeY4BKA3JR3D4nKapRTBmZtsWBcZAU4tw+Jwm+ajyKlCVfPnUI9jaIRx8S2OM8/h5ITHIA/LuCyAcfFOztUNIVRhCxQBY48JZbNBD6UDJU+Vsp5wGbb7ZSBA2Y1c8lFcIadED0EHM73pHseklwfj50rfGvei9Xyz3fjYg+S8pQW6waZfQ9bYiMeqe+VwAEAXpJGxoE3rfL4z5uewvm4bvPszy7XmfTNp9NjUTzOUGvWc9NrQJ6WRlcoPyAxDITkD/Z5poXWHMt4EvGB7y+fsPy4O7lhtf+ig1TQVBbhCtc8/KTlQmNygrgFy6uy+m2HGoMOZb4/4f+c1y85pPTT3U1MOtr33u37YonQ8hlxvsOKTYF3OmUO40WZV159NQvw6OXtSFOx9IP5OG6wPZyfN/EPuvD2TJpCbHTlfC0Uua+nVujnIqoXwANKQeQ98FTcMGKbT9KdK//6ulZvVkGIzWOVXc+Mp/YvvTfUHDC0LfBY/UYzfXogKQK3G1dwkdJ/SM0r91zWfVGvCzk/1+FuoanSmM3Hm6KXScULR3SVlLaGUBYHyIROH4oIfI7NJXUjx6WAPXP86SLRYVguceH/SIRN2ciwKA8iAxBj1nNM3txWO+UnBzyGfktqWm3mV6T+xfJuuENfUwctsyPFQkKgS5QXO70POuJjFWHoc4LwCiIJ2Alp1Czxld3O41jNyxDF/1qW0AfyJQhZnWbHBwaoDhq8VNIaeSQ+9pWnYK6TKU0OatAJOF2KAmEp0W863b2VQcvr+URQAdcQ5MPaWJCsbg7knFyasU5yLCiqgrq5XDDLz5SD/+L3SeVLR1FjnnBzm91nByyHM1QPMMx9vgjJCdCKBI8bpB2wFFxxuKH78x1DW5jShJxaX8TlAEshnnuT+6FaFujTxZeFUKq4FZxEfhi54MiVGLF6GkompJSxbtbP/oJY/VTYUxv9iCS2kz+R5rYXUTvHZRk06UDn/Ot+VKXLt6FXv7n17imr7gUtps6zA+7I0pdvUqkiXmBnPzAUGJK7oKjl12Xh9b2fP6bP7CGreWP38y+JkgS7QVUoAKvtnpG9CsbxVEOWdY6g7Pt+XmXt8qvDqgScULq05lU0CutN28TWg7oHjwl61a6XpWIVgXFZq3Gf4ZsURWPrtDnFMUsBa8iLM9a1mQb3OLmWWu2qw85lw3mJMPyIW/qSXshd/+ICEzYEoomsw5EVossi/XusIfSYUAQgAhgBBACCAEEAIIAYQAQgAhgBBACGAZXv8DHl0kq27FTk8AAAAASUVORK5CYII=">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1E0E4B;            /* Prisma warm black */
+    --purple:#7224F9;         /* Prisma purple */
+    --mint:#55EFAE;           /* Prisma mint */
+    --paper:#FBFAFF;
+    --panel:#FFFFFF;
+    --line:#E9E4FA;
+    --ink-soft:#6A6391;
+    /* eight animal hues, from the Prisma accent palette */
+    --dolphin:#2BC99A;        /* mint-green, deepened for contrast */
+    --fox:#F5933E;            /* orange */
+    --otter:#F594B7;          /* pink */
+    --wolf:#7224F9;           /* purple */
+    --bear:#C47C58;           /* burnt orange */
+    --leopard:#BC63D4;        /* fuchsia */
+    --redpanda:#D9649F;       /* raspberry */
+    --crow:#127688;           /* teal */
+    --display:'Bricolage Grotesque', system-ui, sans-serif;
+    --body:'Nunito', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
+  body{font-family:var(--body);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5;}
+
+  /* ---------- split layout ---------- */
+  .app{display:flex;min-height:100vh;}
+  .brand{
+    flex:0 0 42%;max-width:560px;position:relative;overflow:hidden;color:#fff;
+    background:linear-gradient(150deg,#7224F9 0%, #9B3BE8 48%, #BC63D4 100%);
+    display:flex;flex-direction:column;justify-content:space-between;
+    padding:40px 44px;
+  }
+  .brand::after{ /* soft mint glow */
+    content:"";position:absolute;width:380px;height:380px;border-radius:50%;
+    background:radial-gradient(circle, rgba(85,239,174,.35), transparent 70%);
+    right:-120px;top:-100px;pointer-events:none;
+  }
+  .wordmark{display:flex;align-items:center;gap:10px;position:relative;z-index:1;}
+  .wordmark .logo{height:30px;width:auto;display:block;}
+  .wordmark span{font-family:var(--display);font-weight:600;font-size:1.05rem;opacity:.72;}
+  .brand-mid{position:relative;z-index:1;}
+  .headline{font-family:var(--display);font-weight:800;font-size:2.6rem;line-height:1.04;letter-spacing:-.025em;margin-bottom:16px;}
+  .brand-mid p{font-size:1.06rem;color:rgba(255,255,255,.86);max-width:34ch;}
+  .brand-bottom{position:relative;z-index:1;}
+  .progress{height:8px;width:100%;border-radius:99px;background:rgba(255,255,255,.22);overflow:hidden;}
+  .progress .fill{height:100%;width:0;border-radius:99px;
+    background:linear-gradient(90deg,var(--wolf),var(--leopard),var(--redpanda),var(--otter),var(--bear),var(--fox),var(--dolphin),var(--crow));
+    transition:width .45s cubic-bezier(.22,.61,.36,1);}
+  .progress-label{font-size:.8rem;color:rgba(255,255,255,.8);margin-top:9px;font-weight:600;letter-spacing:.02em;}
+  @media (prefers-reduced-motion: reduce){ .progress .fill{transition:none;} }
+
+  .panel{flex:1 1 auto;display:flex;align-items:center;justify-content:center;padding:48px 40px;min-width:0;}
+  .card{width:100%;max-width:600px;}
+
+  /* ---------- shared UI ---------- */
+  .step-count{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--purple);font-weight:700;margin-bottom:12px;}
+  h2{font-family:var(--display);font-weight:800;font-size:2rem;line-height:1.08;letter-spacing:-.02em;margin-bottom:8px;}
+  p.lede{color:var(--ink-soft);font-size:1.08rem;margin-bottom:26px;}
+
+  label.field{display:block;margin-bottom:16px;}
+  label.field > span.lab{display:block;font-weight:700;font-size:.92rem;margin-bottom:6px;}
+  input[type=text], input[type=email], select{
+    width:100%;font-family:var(--body);font-size:1rem;color:var(--ink);font-weight:500;
+    padding:13px 14px;border:2px solid var(--line);border-radius:13px;background:#fff;
+  }
+  input::placeholder{color:#B3ADCB;}
+  input:focus, select:focus{outline:none;border-color:var(--purple);box-shadow:0 0 0 4px rgba(114,36,249,.14);}
+
+  .choices{display:flex;flex-direction:column;gap:14px;margin-top:8px;}
+  .choice{
+    text-align:left;font-family:var(--body);font-size:1.1rem;font-weight:600;color:var(--ink);
+    background:#fff;border:2px solid var(--line);border-radius:16px;padding:20px 22px;cursor:pointer;
+    transition:border-color .14s, background .14s, transform .07s;display:flex;align-items:center;gap:16px;
+  }
+  .choice:hover{border-color:var(--purple);background:#FAF7FF;}
+  .choice:active{transform:scale(.99);}
+  .choice:focus-visible{outline:none;border-color:var(--purple);box-shadow:0 0 0 4px rgba(114,36,249,.14);}
+  .choice .pip{flex:0 0 auto;width:24px;height:24px;border-radius:50%;border:2px solid var(--line);}
+  .choice:hover .pip{border-color:var(--purple);}
+
+  .q-stem{font-family:var(--display);font-weight:700;font-size:1.7rem;line-height:1.14;letter-spacing:-.015em;margin-bottom:6px;}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;}
+  .chip{font-family:var(--body);font-size:.98rem;font-weight:600;padding:10px 16px;border-radius:999px;
+    border:2px solid var(--line);background:#fff;cursor:pointer;color:var(--ink);transition:all .12s;}
+  .chip[aria-pressed="true"]{background:var(--purple);color:#fff;border-color:var(--purple);}
+  .chip:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(114,36,249,.14);}
+
+  .seg{display:flex;flex-direction:column;gap:10px;}
+  .seg button{font-family:var(--body);font-size:1.05rem;font-weight:600;text-align:left;
+    padding:16px 18px;border-radius:14px;border:2px solid var(--line);background:#fff;cursor:pointer;color:var(--ink);}
+  .seg button[aria-pressed="true"]{border-color:var(--purple);background:#FAF7FF;}
+  .seg button:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(114,36,249,.14);}
+
+  .nav{display:flex;justify-content:space-between;align-items:center;margin-top:30px;gap:12px;}
+  .btn{font-family:var(--display);font-weight:700;font-size:1.02rem;padding:14px 30px;border-radius:999px;border:none;cursor:pointer;}
+  .btn-primary{background:var(--purple);color:#fff;}
+  .btn-primary:hover{background:#5e17e0;}
+  .btn-ghost{background:transparent;color:var(--ink-soft);padding:14px 10px;font-family:var(--body);font-weight:700;}
+  .btn-ghost:hover{color:var(--ink);}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(114,36,249,.2);}
+  .hint{font-size:.84rem;color:var(--ink-soft);}
+  .err{color:#D9377B;font-size:.9rem;margin-top:8px;font-weight:700;}
+
+  /* ---------- reveal ---------- */
+  .reveal{text-align:center;}
+  .badge{width:132px;height:132px;border-radius:50%;margin:0 auto 22px;display:flex;align-items:center;justify-content:center;font-size:66px;
+    background:radial-gradient(circle at 32% 30%, color-mix(in srgb,var(--accent) 20%, #fff), color-mix(in srgb,var(--accent) 52%, #fff));
+    border:3px solid color-mix(in srgb,var(--accent) 55%, #fff);box-shadow:0 18px 44px -18px var(--accent);
+    animation:pop .6s cubic-bezier(.22,1.2,.36,1);overflow:hidden;}
+  @keyframes pop{from{transform:scale(.62);opacity:0;}to{transform:scale(1);opacity:1;}}
+  @media (prefers-reduced-motion: reduce){ .badge{animation:none;} }
+  .reveal .you-are{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;}
+  .reveal h1{font-family:var(--display);font-weight:800;font-size:2.8rem;letter-spacing:-.02em;margin:4px 0 2px;color:var(--accent);}
+  .reveal .func{font-size:.98rem;color:var(--ink-soft);font-weight:700;margin-bottom:18px;}
+  .reveal .desc{font-size:1.1rem;max-width:48ch;margin:0 auto;}
+  .power-tag{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:10px 18px;border-radius:999px;
+    background:color-mix(in srgb,var(--accent) 12%, #fff);color:color-mix(in srgb,var(--accent) 82%, #000);
+    font-weight:700;font-size:.95rem;border:2px solid color-mix(in srgb,var(--accent) 28%, #fff);}
+  .opp{margin-top:18px;font-size:.95rem;color:var(--ink-soft);}
+  .done-note{margin-top:24px;padding:16px;border-radius:14px;background:#F3F0FF;color:var(--ink-soft);font-size:.95rem;font-weight:600;}
+
+  /* ---------- learn more about your animal (on reveal) ---------- */
+  .learn-btn{display:inline-block;margin-top:22px;text-decoration:none;
+    font-family:var(--display);font-weight:700;font-size:1.02rem;padding:14px 28px;border-radius:999px;
+    color:#fff;background:var(--accent);transition:filter .14s;}
+  .learn-btn:hover{filter:brightness(.92);}
+  .learn-btn:focus-visible{outline:none;box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 30%, transparent);}
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px){
+    .app{flex-direction:column;}
+    .brand{flex:0 0 auto;max-width:none;padding:22px 24px;}
+    .brand-mid .headline{font-size:1.9rem;margin-bottom:8px;}
+    .brand-mid .headline, .brand-mid p{display:none;}
+    .brand-bottom{margin-top:16px;}
+    .panel{padding:32px 22px;}
+    h2{font-size:1.7rem;}
+    .q-stem{font-size:1.45rem;}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="brand">
+    <div class="wordmark"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAABaCAYAAABOvjHMAAAYEUlEQVR42u1deZRcVZn/3XtfVXdX753OvpIFA4SQQE4WoixDEgxLCCSCOjoCipxgEEFnBFxYRMeZARThkMwcYSSDDoJI5AhEIAhERJYQIokkBEiCIQtZeu+qrnrv3vnje/e9elWvuqs6XdU9zf2dU6c71ZV6733v/r79u49dN7lLwcDAoN/AjQgMDAwJDQwMCQ0MDAwJDQwMCQ0MDAwJDQwMCQ0MDAwJDQwMCQ0MDEoLy4igl9pLhL+vFKCkkY+BIWFRoRTQ2UI/NRgABcCKANGK4N8MDAwJ+5iAVhQ4/kwOEXGZx/yfzXsVdm9WsCKGiAaGhH0OxgDHBsqrgMtXWeAh0tv8lMTqL9mINADKMTIzyCO0MSLonTWMtwHSIVJKB7CT9DPZSWQ1MDCWsNjai1NyRimfdFwAzKg1A2MJDQyMJfx4uKTSfbkJGSUBxUwyxsCQsDRgQFkluZ46/BOuTxEpA2VKDQwMCYvEPwZIG9i1SaGsyo8JlSRSfrRTUdbUENEg3zVl9pjpHaSdzTPmRtncRNoGxhIWHzySK1g0sjEwJCwNDNkM+kqhGxEYGBgSGhgYEhoYGBgSGhh8bDGwEjPMTfPrCrhy8x8lSoIwlnFs1cNnc6CQrpnAMfOF6pvOnKxjH+X3ZsmvhPfOkPBoFgKnl5LuRILtT6YzDggL4JZfEO/rtjDG3QJ82iQEQM3YIuI3aWdOy9vJrFFCKEWfzzV1n75YGQekDB4zb/fFgj/L2MvrVRJwUoDj+Bcg3GtmPP8dAvS1ZsqvFPcuX6Uw0Hc66DcSck73PtkJpBJApByorAcq6xmiMVoYiQ6g44hCRxMRNFrhT60frWA1ERLttHgqaoC6UQyxGrpx8Rag9aBC+xEa4tXnpBdY3ShG16CC35mMK3S25LaUXACpLqCrAyiLAbUjgFgdy6vAr7tz2g/TuRXSmaNb7Lo66fjRCqC6keQtooCTBDqaFNoP02esKLXmAeGy5oII19lCf6+oAepGMlTU0LGScaD9MMnPSdG1RspLR0bG6LhS+sc1JMxY/PE2WhTjTmKYtpBj8lyGYRMZKusZrCh9NpUA2g4r7N+usP1PClvXS+zdrrwFIu1eKgBB353qAibNZpi1lGPKPI6GscxbeF0dwJE9Cu++IvH6byV2v6lglRFhq4cA1z0WQUWtTwzp0Pe+8bjEA1+3UVmXbeG4ADqagIaxwIIVAicu4hg+iaG8Ok8v1AGYAP7wMwdrf+CgqjE/GXAL6Gqn8xk/k2HGYo4pp3IMncBQUesTKt4KHNqlsONliTefkti1UYELoKzKP462Lp3N9P6Mczimn80xfiZD/UiGaCV9xk4SCfduV3j7jwqb1zk4uBMor6YtQKRT3DWW6gIaxzNU1gM7NyqUVQ5cIpa0bY1zsmiJdmDqaQxnrRA4/gye9wxeMg68+YTE+lUOPnhLobKu8BiMW2TlGsYwXHCjwCkX8Lxisidud/DkHQ7KKslif+e5aJA8rku3ca3EfVfaqKwPLjTGyWqc+jmOJTcK1AwtfPJX2nT+eZPQVXgdR4DxMxgWXysw/ez85K0UsOUZiSfvdLDrDYXKep9cyQQwaynHopUCo4/P7zo6mxVe+qXEs/c66Ggmy9lbJZrPPW47CFz1oIUx0xhumZ/yFPvH2hJyQW5OWQz4/O0Cn/yiHzhJx10wORIzWoNFK4DZyzlmnsfxh7scPH2PAxGhOCbf+KWzGZgyl+GyVRZqRzBybR1fw2s3Uru80qGf2zdIWGlxmHL8REa6JQxTCFwAHc3A+d8WWHyt8AjFePCYxUhyxZuBBSs4ltxgIVLuy9u7XviBrUpLznABnLiI47jTOR7/sYPn/tMBF2TJvnCnhVOWcs9V9Qab068l497F6hgWfk3gpMUcv7zOxo6XFSob+p6IXACdTcCMczmmf5rOceFKgd//m4OaoWQEBhp4qQiYaAcaRjNc85sIPvlF4S1w/XfOQ7J17k31kh2K/k+kHDjv2wJX3GdBREg796TduQASbcAxsxhWPBhB7QhGRGD+RHw6GfTvVhR4dpWD7RtoakJK/9xCXwh3QU+7lGPxtcJLPHEr+5h97ZLF24Dltwksu4UImC5vlilv5ocK6ckWqwy46CaBZbcIVDUCX384glOWck856c9nXUvGvVOKCDBsIsPVv45g5vkcHUcQuk/P0SgexyYre9FNrrKTwKKVAmNPZEh0DMydD3ipLOCQcQxXP0zugWMHb7bnArnElG6WVN/odCFrMjo2aeoVayxYEfp3rgWt3ajKBuDy1RbFk072ApDSP7aTomPtf0fhmXscVA0pPI5hjFy34ZMYLvyeRYs2YwsMpdKuN89XT1ZfW4MLviNw5lcEHNu3blny7uZ70zPDZ14h8L3noxgzjXlWP+s6url3jFG2VBP7y6stHHcGQ7y552xyvhCup3P2NQLDJtJ5QpEHtexmAZkamO5oUUmoM1RlMeDKX1gYMpasjwhZ/Er5xORualvfaD3Fnk5GYdF3T5rD8aV7LNgJ5IztdBb0nG8KNIymcwjceO2Ccf/Ywp2SePQmG8lOn/wFXb8Akh3AaZdzLzGQrii0G+ddbw8vq5x+RmO542Dtcp+8hGI2adPiDBxX0rUwHvx+xl1ZyOxEmlKgRJTMJo12b8PunZRBuXFB73EL+NLdFmpHUBLlaD0CxsnTmTiL4cwrBB2D+0mnqadzzP0sR2dTH1vfgR4TMg4kWoBL77Uw8liygJkEVNKfv9v3jsLf31JoPaDAOCVPxk1nGDKOeTc7fQGICBHxxEUcC64SWHeXa7HsjExZAhgxhWHuJSJ7ESk/NnrvVYX3X5NwUsCUUzn275DY+pzykiwFLRRXAVUNAaafzb1Fn0nA5n0KbzwukegAOOue51pW770mqVQjw49Z2QAsu0X4x8wgoD6P3ZsUdr8p0dFEyabxMznGz2CBIeV0OSqV7c5peSY7gXf+LLH/HQU7Sfdu8hyGhrEscL06QSdtoGYYw/k3WFizsm+2iFQAlt1qwYq6XgsPnvuSGwT+9keJeCutw4GyFUnRSMgFZSGnLWSYvYxiiDACMg5s/5PE03c72Pm6QqLdX1xcALE60mKLrxUYNZVlEZFb9PnF1wpsfkri8N9VoC7EBJUbpn+aI1rhkokHLWAqAfzvP9t47VEJx3WjyiodWFGgorp36XTGALsLGD6ZoWE0CyZ9XIt4cJfCXcttHHy/sJpfpByhJOQcaG8id6x+dLastLz3vq3w6E0OdvxFIpXwFVGk3MGUuRzLbhEYdRwLJWLY/Xv1N5RFPbhT+aUMTsSeczHHkustz3qn70ynJDD7Io7nf86wd5sKVyx5ZkPbDwFnfpVj0uzs62ac7mHNMIbzr7ew5mobVY2AGiBJmqK5o0qRcBZ/I5znmgxP3uHg7ottbN+gvBtX1UivWB1pzI1rJW4/L4VXHpGee5GpoaMx4KwVHMl4xmJxz+PYU7PNjNbsj91qY8MaiVgdWa7qoe5eMUchIb0NRs1Q5rnU6ccFA156UOLg+wr1o4GqBv+6e3rlckelQ0mJeZ/lgQWfTpj3X1O4c2kK214ka1o1xP3eIUTsbS9K/GRpCu+/JrPOO4yA637q4P4rbTTvVYjV+udY2UDn8/Q9Evd+IYVEG4JtccxPUM1expGK9y5pwhiQigNDjwHO/ZaVpTgCbrADzLuE44SzGOItfReLDkgS6hhs0hyGY2axLBdQuZrqidsdrL3NQXk1LR69kNKDezBaoADwwNdsvL5Welo0/XhKAacsERg6IRhjSId2zG6cEGKNOBXkX31UonYEtXB5SQqV5uMchXvU3cJKJVQw1lThL+X0nJjRXSpjTmQYPpl576WTvv0I8IurUkh2EknCEjOVDZRI+8VKG+1HXLKocAX61tMSv/uhg+qhlGyRGecJBtSPBN5+XuG3N9tezJl+zgA9UqC3dUPGyRVe+l0LlfXIUj6ZhAUDlt1ieV7RoCahk6RuCiC4aKTb9bHtBYkn/sNB7XC/9JALjptIKa8GHvq2jYO7VKAnUMcw5dXAcWdwJDv8WEi5bUvlVWmlhTR0NFEcdbSEC/UEBNB+RAUWXLpbN+czAuVVQPN+SqZ0NGW/4q2uUuHda27GKQM8/iTm1zERdH83PODgI7drxcmRKXRS9PeP3gX+tMbxZJt5LOmQFbTKkHWP07WQnSTP4pVHJPZsVQHrquUw9BiKHe1kYXG3TkLNOJfj5CU8yw0Nk5F0gJGfYFhwlUBHU3aINGhiQulQS9PkOTx7Abo34ck7HU8A+QTISlLNru0w8Mw9Dj5/uwUpMzilgGPnc2x4QAasUXcF8WLVjZQil/bQLoWWjxRqhzFPS2vLPe4khmt+G8HLv3KQTITEXIoW2cGdCgd3UbxVUYvc0w6K6nBZi9WV+ZZnZV4WQDrk8m55VuLsa0Sgr9WLK7crfPi2Qlms5+/TVnrLMxJjThC+y+haWRGhGvL+d9y4MB8LpWuCtcCFN7lJqBD5Zcayev0t+JrAm09SIika69+Wtj4noa7J1Y5gaBzPAtZHp40/+KvCbnfLwEJcAsd1Lbeu9zN63sJ2XY1RU5n3vfloVS9djz6eunEXV8sBcsfmXsy8OmF6LDthJsOEmd3fhq5OYNcbEi89KLHp9xIiAkSiaY0D8EsOsbqgzLV8Em1A6wFFik/lce4W0HJAIdFGoYK3taMrq0O7FVJxUjQ9kkb520FmeiNaJhU1GdeTR02w9QjwmdsEhk7ITsakkzLdRWWMjhMtp9rh3Zf0f3am7+2Aq6GqG8kaBjSRK+SdGyVpft67hd36EfDh32TQDXKPUd1IkxA6nszHYhUrVa2t4Qv3O76yyZi68BoUcryUpDrrJz7JcflqC1+9z0KshixLluvFcm+36KRU3jLxEidObiXp2AXKjeV2gQv1SLg7ADBpNsMZX/Zrgp4ll3S8reslnv+547UVZiZpPvEpjnmf4+jo59ohLwIHvfgsV6zQvK/3Zkc/nqx5f/jfo+VApJzl714UsVZEpQ5g9xsKT99NvZeOnZ2c0K1dYS+dzNCkPPFsjqsfjqBqCEMq8fF8AI1y18GyWy2vqSJg+UFK6rEfOHjsVgeHdqvsZJ6uHV5voWE0YCf672laxb+FLM/3+uoGscK4l9nRUYz4OFZHmeBXf0OupHLfz9uSpPVgOilKLFy2SvTLoGy/u24WTYWcdinHxFmuGxoSsz71Ewd7tykoBfz6Rjsr96Bjw+qhwJIbLCTa/VBh8JCwm8VRN/LoXDxhAXUjcqT945T6z9tClGgRR8uBB79hY91PHa9Ew/T0gnT7VjNfIe6gcPtkJ8/lmP9F3qe9lwMdjNP9HTaR4ZyQmqCOC3e+rrB+lYNYDeUQ3npaYcMaJ6vGrP8952KOaQtZv8mSl1qIADBxFu9dRsqNK2qGAaOPz8i8umRqPUiT7fn2eipVfB7qpoBoDHj8Rw7uuIAaD1oOKG/mj4e9cmyVoSf6z/iKQEXtwKl3FX39MHIzl35PIFYbTLjo31MJ4KEbbG+9SAeI1QCP/2tutxRwa4eVKCxuHqjZ0Z5IqBQw5gSGCSczvPeqKqgtTLjTAbOXc6+fUy9SpQCmgH3bFLo6KHOaT7atVO6cPk5lA/D3vyo8sNJG3UiqkVUNYcE2q7Rfpi3gmL082AGj5TjsGIZxJzHseJm6VQa1G+rWBGeeR/OkYS15XADr7nKwe5MKzA6KCP3fR77rYMX/WF7cqGUpHeotXrRSYO1tpZ87LHlOSAvrnG8K/Gy5HQiSe3RFuqi9auFKEd4ZwYDtL8mCTJsuUfR9jSJ3jBiNUcIm3kptZNJWOS3/y7+SiLcKnH65CCodN7U/5gSGbS+qwf2IbjcZF6sDLvx+dk1Qr6ldmxSevddBVUOQRDou/+s6iZd+KTH/H4Mk1vHhWSsENv1eYt/20tYOeX9oNCUp5X7evwi0HPATD7lugLCopamrA/jcv1toHMcCUwna3Yu3Aduel4jms5+InpBXquTJDV2WEBaRMVYX/qqsB2L1wMsPkWLJmv4A9aZ6SmSQW8HF1wk0jmfUpMGD4YTdBfz6ejtnfVi5fbW/+6GNI3uU18CQbgQiZeSWyhIX7vslwa1dgMXXCVz4fYGudrIKWuDpM2lKUs8jE8BlqyyvPYllZsQYsHGtg4O73N218iVWCQmYOTvoDfjmmNBnnGLgaAVCezgBlHzB9AcBE63A5LkMp18uAqNvnhXktPvBB5tp7AwhM5qMA5EKWmeP3uxkKS2dpDl2PsP8z5e2dmj1p3D1CNKUuQx/uNvB+6/R9obpo0yVDRQDfvobAiOmhIznuK5JVwewfrVEWaywubRSuRyMAXYK6GrK3wWDOx2y6GoRcEHTA8emD5WXZR2M0Ne8/FaLZgClf+3aDd32osSjN9PoWcuB7hUut6gnduIptNFYlluqgPOvt7B1fRLtTbQzXLE9pX5tX9WT15PncUyex3HgXYU9W92hXkH9hGOnM9SPCh/q1e8Ji3pR9+9QWUO9eSVMVPEJmOoChk1imHcJ77bTP5OIUz/FabZPZc/IKUktgFbZ4KwXCgtoOwQsuIpjwskhrWmuDA9/ACy8StC2JbLne+GkgK44/RSR4N+kQ3mHJd+x8N8rbESGFH/usN97yD3fnNEArB7DCbNWmQTUQtz8lMT61Q5lRAsUWKk2orWTQONY4B+uLLwQlUlaXaDeuUlhz5b+b0AuloJOxmlNnPPN8DlBLZP5X+i7qEq7pbOXcWx8jGHLeso8F7MM1C8k9PZaSYt99PsBy8T8bfIz3QrHIQK++xeJNV+3ES3vnUUrZu9omDuq5/bybSbIdf1gNE3S3QZX/69JmFYTrKhBVmdM5npKd1PzygN0kwzU8rzoZgvvvpIixc6L5zH1W2IGLFu7hG70lDElr4upwiILuPqfbG9T3F6RSZZ2YeW7qVNg86U0heGk6P0//8rB5qdk0bV0f+ULOpqBU5ZwzDgnvzlBvV7yeln5zR0On8yw6GqBjhaqUQ+O7KhLkgPvqYBgvYmBjPgsfQNeTT69heLvfuTg51fYZBGjvXfHdAzBSi2HPF+eDFyLJyK0C/nDN9KOBIMuO+p6DJX1wNLvi/zj52LkKxwKHybMZEi0Fa9ZvqQk1Br7hfsd/HhhClvXS2/7Qc/qZWzAmz5l0NUB/OUhidvPTWHdTx2UxUhDHVU8pFDyOlvOskTIy5OBRe7Zk3c4uH+FHeg9HVRWkNMGYed+S2DIWFaQ697XXgtjVDtcfqtV1ARev8SEZTGG916R+K/LbIw6jmHaAo7J8xiGT6IHwkTK3Cc2xYG2Q+4DYTYobH1OYv8OhUgZCs6CdhsT9pZICLaSpf87F+F1/JLv8yCSncChDxS2vSDxyiMSH25VqKjzH8U22AiYaAemns5w2qXZNcH+soaT5zJ86lKOF+6jzcD62v3v8wfC6IHLqacxrHwoEnAndOy29gcOnrnHQWUjFWJTCdooqLIOiNUzqvUpepJQe5NCvOXoHo3GGO0Anll8ZSDr2rQ3/6kLPcUx9BgWun9pvBU48qHKaiBXkmp+tSNY3qzXMmg9RBPu0XL6jlyLQEl6PFl5VfYhlENkLkhuHGgcx7JGfBiAeDvQsq8AubkzpnUjWNa5MQDN+/3tLvUj1nQCr191jXtwJ0W7CRTDKvdbiUJKf2GWVdHvyTgQb1OBkgS3aO9PpE2h98ba7Xsn3OQxjoKe2KO3MtyzJbzdjVvu96ns4yQ7gX3bVcFKTURoxznVw4ZYeve40M+wtG0ckT9x9m4PlxsXFIsX8nzEeCs9Li0M+oGszKIGhMMfDLxsrdXLDPyAJWH6jU7fqDcikPVUpr5IPkQrunERCxUscx8aWuD3Md7NeaD778tX+VjR3PFtb2LnvpRb+uMFwhSljs+7u4b+tIhqMMWE3V4oiqNt+rqY3dvvK3ZRva8TCH16vnku5FJ0MQ2oWBgGBgaGhAYGhoQGBgaGhAYGhoQGBgaGhAYGhoQGBgYlR/HqhCrtWfRpD4TBx3DXaAOD0pPQ3csjs/mWu+1hVtQQ0cCgaCRUIAJ2ttCemulkUw797cgeRc9kMEQ0MOj7KQqPcJL2VQmDiLjbyRkSGhgULybUz14IJagyBDQwKDoJtTU0MDDoHqZEYWBgSGhgYEhoYGBgSGhgYEhoYGBgSGhgYEhoYGBgSGhgYEhoYGBgSGhgYEhoYGBgSGhgYEhoYGBQIvwf70gR8PT2a9MAAAAASUVORK5CYII=" alt="Prisma" class="logo"><span>· connections</span></div>
+    <div class="brand-mid">
+      <h1 class="headline">Find your animal.<br>Find your people.</h1>
+      <p>Every learner sees the world a little differently. Take the quiz to find the animal that thinks like you, then connect with other learners that think the same way.</p>
+    </div>
+    <div class="brand-bottom">
+      <div class="progress"><div class="fill" id="fill"></div></div>
+      <div class="progress-label" id="plabel">Let's begin</div>
+    </div>
+  </aside>
+  <main class="panel">
+    <section class="card" id="card" role="region" aria-live="polite"></section>
+  </main>
+</div>
+
+<script>
+/* ============================================================
+   CONFIG ,  paste your deployed Apps Script Web App URL here.
+   Blank = preview mode (shows the result without saving).
+   ============================================================ */
+const CONFIG = { ENDPOINT_URL: "https://script.google.com/macros/s/AKfycbyT_YuXWszM1C1I6yiouE7q1e7ERsGyRWj6Jcv5VBTgQCFTgIWeJVa-QOR26xLiLb6sBQ/exec" };
+
+/* ---------- Animals ----------
+   img: drop in a photo/illustration URL to replace the emoji on the reveal. */
+const ANIMALS = {
+  Dolphin:   {emoji:"🐬", img:"", v:"--dolphin", fn:"Outgoing · Hands-On Doer", power:"Communication & Collaboration", opp:"Snow Leopard",
+    desc:"You live in the now and learn best by jumping in and trying things. Playful, quick, and full of energy, you turn ordinary moments into fun and you're usually the first to say “let's go!” You notice what's happening around you and love being part of the action, and friends count on you to keep things lively.",
+    note:"At your best when you've got room to move, play, and explore."},
+  Fox:       {emoji:"🦊", img:"", v:"--fox", fn:"Outgoing · Idea Explorer", power:"Innovator's Mindset", opp:"Bear",
+    desc:"Your brain is full of “what if?” You see ideas everywhere and love starting new projects, inventing games, and connecting things nobody else thought to put together. Possibilities get you excited, and you're always curious about what's around the corner. People love your imagination and the way you make things interesting.",
+    note:"At your best when you're free to dream up new ideas and try them out."},
+  Otter:     {emoji:"🦦", img:"", v:"--otter", fn:"Outgoing · Group Connector", power:"Communication & Collaboration", opp:"Crow",
+    desc:"You're the friend who makes sure everyone feels included. Warm and caring, you notice how people are feeling and you're quick to cheer someone up or pull a quiet kid into the group. You care a lot about your friendships, and people feel safe around you, and a team just works better when you're in it.",
+    note:"At your best when you're bringing people together."},
+  Wolf:      {emoji:"🐺", img:"", v:"--wolf", fn:"Outgoing · Goal-Getter", power:"Initiative & Follow Through", opp:"Red Panda",
+    desc:"You see the goal and you know how to get there. Organized and dependable, you're great at making a plan, leading the group, and actually finishing what you start. When things feel messy, you're the one who sorts them out, and people trust you to get the job done.",
+    note:"At your best when you've got a goal to lead the team toward."},
+  Bear:      {emoji:"🐻", img:"", v:"--bear", fn:"Reflective · Steady Builder", power:"Initiative & Follow Through", opp:"Fox",
+    desc:"Steady, prepared, and someone people can always count on. You like knowing what to expect, you do things carefully, and you remember the details that matter. You're loyal and reliable. When you say you'll do something, you do it, and friends know you've always got their back.",
+    note:"At your best when you've got a clear plan and time to do things right."},
+  "Snow Leopard":{emoji:"🐆", img:"", v:"--leopard", fn:"Reflective · Quiet Visionary", power:"Applied Curiosity", opp:"Dolphin",
+    desc:"Quiet on the outside, but a whole world spinning inside. You think deeply, notice things other people miss, and often sense where something is heading before anyone else does. You like having space to imagine and figure things out, and your friends are amazed by the surprising ideas you come up with.",
+    note:"At your best when you have quiet time to think and imagine."},
+  "Red Panda":{emoji:"🐼", img:"", v:"--redpanda", fn:"Reflective · True Heart", power:"Innovator's Mindset", opp:"Wolf",
+    desc:"Gentle, kind, and true to who you are. You feel things deeply and you have a strong sense of what's right and what matters to you. You might be quiet about it, but your heart is huge, and you care a lot about being genuine and fair. Friends love how real and caring you are.",
+    note:"At your best when you can be yourself and stand up for what you believe."},
+  Crow:      {emoji:"🐦‍⬛", img:"", v:"--crow", fn:"Reflective · Clever Thinker", power:"Applied Curiosity", opp:"Otter",
+    desc:"You're curious about how everything works, and you love figuring things out on your own. Clever and resourceful, you'd rather solve the puzzle yourself than be handed the answer, and you usually crack it. You ask great questions and spot clever solutions nobody else notices.",
+    note:"At your best when you've got a problem to solve and the freedom to do it your way."}
+};
+
+const ANIMAL_LINKS = {
+  "Dolphin":      "https://kids.nationalgeographic.com/animals/mammals/facts/bottlenose-dolphin",
+  "Fox":          "https://kids.nationalgeographic.com/animals/mammals/facts/red-fox",
+  "Otter":        "https://kids.nationalgeographic.com/animals/mammals/facts/river-otter",
+  "Wolf":         "https://kids.nationalgeographic.com/animals/mammals/facts/gray-wolf",
+  "Bear":         "https://kids.nationalgeographic.com/animals/mammals/facts/brown-bear",
+  "Snow Leopard": "https://kids.nationalgeographic.com/animals/mammals/facts/snow-leopard",
+  "Red Panda":    "https://kids.nationalgeographic.com/animals/mammals/facts/red-panda",
+  "Crow":         "https://kids.nationalgeographic.com/animals/birds/facts/american-crow"
+};
+
+const TYPE_MAP = {
+  ISTJ:"Bear", ISFJ:"Bear", INFJ:"Snow Leopard", INTJ:"Snow Leopard",
+  ISTP:"Crow", INTP:"Crow", ISFP:"Red Panda", INFP:"Red Panda",
+  ESTP:"Dolphin", ESFP:"Dolphin", ENFP:"Fox", ENTP:"Fox",
+  ESTJ:"Wolf", ENTJ:"Wolf", ESFJ:"Otter", ENFJ:"Otter"
+};
+
+/* Questions: 7 per axis. options [poleLetter, youngerText, olderText] */
+const Q = [
+  {axis:"EI", a:["E","After a party with lots of people, you feel pumped and ready for more.","After a big social event, you feel energized and up for the after-party."],
+              b:["I","After a party with lots of people, you feel worn out and ready for quiet.","After a big social event, you feel drained and craving downtime."]},
+  {axis:"EI", a:["E","You'd rather hang out in a big group where something's always happening.","You'd rather spend time in a lively group."],
+              b:["I","You'd rather hang out with one or two close friends.","You'd rather spend time with a couple of close friends."]},
+  {axis:"EI", a:["E","When you have great news, you want to tell everyone right away.","Big news hits and you broadcast it immediately."],
+              b:["I","When you have great news, you sit with it yourself first, then share.","Big news hits and you process it privately first."]},
+  {axis:"EI", a:["E","To recharge after a long day, you find someone to talk or play with.","You recharge by being around people."],
+              b:["I","To recharge after a long day, you spend time on your own.","You recharge by getting time alone."]},
+  {axis:"EI", a:["E","In a workshop you usually raise your hand and think out loud.","You do your best thinking out loud, bouncing ideas off people."],
+              b:["I","In a workshop you usually work it out in your head first.","You do your best thinking alone, before sharing."]},
+  {axis:"EI", a:["E","On a project, you'd rather team up with others.","On a project, you'd rather collaborate closely with a team."],
+              b:["I","On a project, you'd rather do your part on your own.","On a project, you'd rather own a piece independently."]},
+  {axis:"EI", a:["E","A perfect Friday night is out doing something with friends.","Your ideal Friday night is out with friends."],
+              b:["I","A perfect Friday night is cozy at home with a book, game, or show.","Your ideal Friday night is a low-key night to yourself."]},
+
+  {axis:"SN", a:["S","You're more interested in what's real and happening right now.","You're drawn more to concrete, practical realities."],
+              b:["N","You're more interested in what could be possible, and “what ifs.”","You're drawn more to theories and possibilities."]},
+  {axis:"SN", a:["S","When you learn something new, you like clear steps and real examples.","Learning something new, you want concrete steps and examples."],
+              b:["N","When you learn something new, you like the big idea and how it connects.","Learning something new, you want the overarching concept."]},
+  {axis:"SN", a:["S","You'd rather a coach show you exactly how.","You'd rather a workshop give you clear methods."],
+              b:["N","You'd rather a coach let you find your own way.","You'd rather a workshop hand you an open problem to crack."]},
+  {axis:"SN", a:["S","You tend to notice the little details around you.","You naturally pick up on specific details."],
+              b:["N","You tend to notice patterns and how things fit together.","You naturally pick up on patterns and connections."]},
+  {axis:"SN", a:["S","Your daydreams are usually about things you did or will do soon.","Your mind wanders to real, near-term plans."],
+              b:["N","Your daydreams are usually about wild imaginary worlds and ideas.","Your mind wanders to abstract ideas and what-ifs."]},
+  {axis:"SN", a:["S","You trust something more when you can see, touch, or test it.","You trust something more when it's been tested in practice."],
+              b:["N","You trust something more when it makes sense as an idea.","You trust something more when it's logically sound in theory."]},
+  {axis:"SN", a:["S","You'd rather read about real people and true stories.","You'd rather read nonfiction and real accounts."],
+              b:["N","You'd rather read about made-up worlds and possibilities.","You'd rather read speculative or idea-driven writing."]},
+
+  {axis:"TF", a:["T","When a friend has a problem, you first help them find a solution.","A friend brings a problem; you first help them solve it."],
+              b:["F","When a friend has a problem, you first make sure they feel heard.","A friend brings a problem; you first make sure they feel heard."]},
+  {axis:"TF", a:["T","The worse thing to be called is unfair.","Worse to be called: unfair."],
+              b:["F","The worse thing to be called is unkind.","Worse to be called: unkind."]},
+  {axis:"TF", a:["T","When deciding something, you trust logic and facts.","On a tough call, you lean on objective logic."],
+              b:["F","When deciding something, you trust how people will feel.","On a tough call, you lean on the human impact."]},
+  {axis:"TF", a:["T","In a group project, it matters more that the work is done right.","In a team, you weight getting it right more."],
+              b:["F","In a group project, it matters more that everyone gets along.","In a team, you weight group harmony more."]},
+  {axis:"TF", a:["T","If a rule seems off, you care most about whether it makes sense.","When a rule seems off, you focus on whether it's logical."],
+              b:["F","If a rule seems off, you care most about who it might hurt.","When a rule seems off, you focus on who it affects."]},
+  {axis:"TF", a:["T","Giving feedback to a friend, you tell them straight so they can improve.","Giving feedback, you tend to be direct and honest."],
+              b:["F","Giving feedback to a friend, you soften it so you don't hurt their feelings.","Giving feedback, you tend to be gentle and tactful."]},
+  {axis:"TF", a:["T","A good leader most needs to be fair and consistent.","A great leader is above all fair and principled."],
+              b:["F","A good leader most needs to be caring and understanding.","A great leader is above all empathetic."]},
+
+  {axis:"JP", a:["J","Your weekend feels best when you know the plan ahead.","Your week feels best when it's mapped out in advance."],
+              b:["P","Your weekend feels best when you can go with the flow.","Your week feels best when it's open and flexible."]},
+  {axis:"JP", a:["J","When you have a project, you usually start it right away.","With deadlines, you finish well ahead."],
+              b:["P","When you have a project, you usually start closer to when it's due.","With deadlines, you hit your stride near the wire."]},
+  {axis:"JP", a:["J","Your space is more often tidy and organized.","Your space tends to be organized."],
+              b:["P","Your space is more often a creative kind of mess.","Your space tends to be comfortably chaotic."]},
+  {axis:"JP", a:["J","On a trip, you'd rather follow a schedule of fun things.","Traveling, you prefer to plan an itinerary."],
+              b:["P","On a trip, you'd rather see where the day takes you.","Traveling, you prefer to improvise as you go."]},
+  {axis:"JP", a:["J","A to-do list makes you feel calm and in control.","A to-do list makes you feel calm and in control."],
+              b:["P","A to-do list makes you feel a little boxed in.","A to-do list makes you feel a little boxed in."]},
+  {axis:"JP", a:["J","Plans changing at the last minute throws you off.","A last-minute change of plans feels disruptive."],
+              b:["P","Plans changing at the last minute is totally fine, maybe even exciting.","A last-minute change of plans feels fine, even fun."]},
+  {axis:"JP", a:["J","You'd rather finish one thing fully before starting the next.","You'd rather finish one task before the next."],
+              b:["P","You'd rather have a few things going at once.","You'd rather juggle several at once."]}
+];
+
+const INTERESTS = ["Gaming","Books","Movies","Anime","Theater","Coding","Music","Crafts","Travel","Sports","Art/Drawing","Cooking/Baking","Animals & Pets","Board games/D&D"];
+const COHORTS = ["Aurora","Cascade","Harbor","Meadow","Summit","Wildwood"];
+const TIMEZONES = [
+  ["-10","Hawaii (UTC-10)"],["-8","Pacific (UTC-8)"],["-7","Mountain (UTC-7)"],["-6","Central (UTC-6)"],
+  ["-5","Eastern (UTC-5)"],["-4","Atlantic / Caracas (UTC-4)"],["-3","Argentina / Brazil east (UTC-3)"],
+  ["0","UK / Portugal (UTC+0)"],["1","Central Europe (UTC+1)"],["2","Eastern Europe (UTC+2)"],
+  ["3","Moscow / East Africa (UTC+3)"],["4","Gulf (UTC+4)"],["5.5","India (UTC+5:30)"],
+  ["7","Bangkok / Jakarta (UTC+7)"],["8","China / Singapore (UTC+8)"],["9","Japan / Korea (UTC+9)"],
+  ["10","Sydney (UTC+10)"],["12","New Zealand (UTC+12)"]
+];
+
+/* ---------- State ---------- */
+const state = {
+  step:'landing',
+  basics:{firstName:"",email:"",band:"",cohort:"",tz:""},
+  answers:Array(Q.length).fill(null),
+  qIndex:0,
+  interests:new Set(),
+  otherInterest:"",
+  prefs:{joinGroupChat:""},
+  result:null
+};
+
+const card = document.getElementById('card');
+const fill = document.getElementById('fill');
+const plabel = document.getElementById('plabel');
+
+function progress(){
+  const denom = Q.length + 2; // 28 q's + interests + prefs
+  let done = 0, label = "Let's begin";
+  if(state.step==='quiz'){ done = state.qIndex; label = `Question ${state.qIndex+1} of ${Q.length}`; }
+  else if(state.step==='interests'){ done = Q.length; label = "Your interests"; }
+  else if(state.step==='prefs'){ done = Q.length+1; label = "Almost done"; }
+  else if(state.step==='reveal'){ done = denom; label = "All done!"; }
+  fill.style.width = Math.round((done/denom)*100)+"%";
+  plabel.textContent = label;
+}
+
+function el(html){ const t=document.createElement('template'); t.innerHTML=html.trim(); return t.content.firstChild; }
+
+function render(){
+  card.innerHTML="";
+  ({landing:renderLanding, quiz:renderQuiz, interests:renderInterests, prefs:renderPrefs, reveal:renderReveal})[state.step]();
+  progress();
+  card.querySelector('input,select,button,[tabindex]')?.focus();
+}
+
+function renderLanding(){
+  const b=state.basics;
+  const node=el(`<div>
+    <div class="step-count">Welcome, learner</div>
+    <h2>Let's find your animal</h2>
+    <p class="lede">First, a few quick things about you. The whole thing takes about five minutes, and there are no wrong answers, promise.</p>
+    <label class="field"><span class="lab">First name</span><input type="text" id="fn" value="${b.firstName}" autocomplete="given-name" placeholder="Just your first name"></label>
+    <label class="field"><span class="lab">Prisma email</span><input type="email" id="em" value="${b.email}" autocomplete="email" placeholder="you@prisma..."></label>
+    <label class="field"><span class="lab">Which school are you in?</span>
+      <select id="bd">
+        <option value="">Choose one…</option>
+        <option value="LS" ${b.band==='LS'?'selected':''}>Lower School (4-5)</option>
+        <option value="MS" ${b.band==='MS'?'selected':''}>Middle School (6-8)</option>
+        <option value="HS" ${b.band==='HS'?'selected':''}>High School (9-12)</option>
+      </select></label>
+    <label class="field"><span class="lab">Your cohort</span>
+      <select id="ch"><option value="">Choose one…</option>${COHORTS.map(c=>`<option ${b.cohort===c?'selected':''}>${c}</option>`).join('')}</select></label>
+    <label class="field"><span class="lab">Your time zone</span>
+      <select id="tz"><option value="">Choose one…</option>${TIMEZONES.map(([v,l])=>`<option value="${v}" ${b.tz===v?'selected':''}>${l}</option>`).join('')}</select></label>
+    <div class="err" id="err" hidden></div>
+    <div class="nav"><span></span><button class="btn btn-primary" id="start">Start the quiz →</button></div>
+  </div>`);
+  card.append(node);
+  node.querySelector('#start').onclick=()=>{
+    b.firstName=node.querySelector('#fn').value.trim();
+    b.email=node.querySelector('#em').value.trim();
+    b.band=node.querySelector('#bd').value; b.cohort=node.querySelector('#ch').value; b.tz=node.querySelector('#tz').value;
+    const err=node.querySelector('#err');
+    if(!b.firstName||!b.email||!b.band||!b.cohort||!b.tz){ err.textContent="Please fill in everything so your coaches can find your matches."; err.hidden=false; return; }
+    if(!/^\S+@\S+\.\S+$/.test(b.email)){ err.textContent="That email doesn't look quite right ,  mind checking it?"; err.hidden=false; return; }
+    state.step='quiz'; state.qIndex=0; render();
+  };
+}
+
+function renderQuiz(){
+  const i=state.qIndex, q=Q[i];
+  const idx = state.basics.band==='HS' ? 2 : 1;
+  const node=el(`<div>
+    <div class="step-count">Question ${i+1} of ${Q.length}</div>
+    <div class="q-stem">Which feels more like you?</div>
+    <p class="lede">Go with your gut. Pick the one that fits most days.</p>
+    <div class="choices">
+      <button class="choice" id="opta"><span class="pip"></span><span>${q.a[idx]}</span></button>
+      <button class="choice" id="optb"><span class="pip"></span><span>${q.b[idx]}</span></button>
+    </div>
+    <div class="nav"><button class="btn btn-ghost" id="back">← Back</button><span></span></div>
+  </div>`);
+  card.append(node);
+  const pick=(pole)=>{ state.answers[i]=pole; if(i+1<Q.length){ state.qIndex++; } else { state.step='interests'; } render(); };
+  node.querySelector('#opta').onclick=()=>pick(q.a[0]);
+  node.querySelector('#optb').onclick=()=>pick(q.b[0]);
+  node.querySelector('#back').onclick=()=>{ if(i===0){ state.step='landing'; } else { state.qIndex--; } render(); };
+}
+
+function renderInterests(){
+  const node=el(`<div>
+    <div class="step-count">Your interests</div>
+    <h2>What are you into?</h2>
+    <p class="lede">Pick as many as you like. It helps us find learners who love the same stuff you do.</p>
+    <div class="chips">${INTERESTS.map(t=>`<button class="chip" data-t="${t}" aria-pressed="${state.interests.has(t)}">${t}</button>`).join('')}</div>
+    <label class="field" style="margin-top:20px"><span class="lab">Something else? Type it in</span>
+      <input type="text" id="other" value="${state.otherInterest}" placeholder="e.g. skateboarding, K-pop, robotics"></label>
+    <div class="nav"><button class="btn btn-ghost" id="back">← Back</button><button class="btn btn-primary" id="next">Next →</button></div>
+  </div>`);
+  card.append(node);
+  node.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{
+    const t=c.dataset.t;
+    if(state.interests.has(t)){state.interests.delete(t);c.setAttribute('aria-pressed','false');}
+    else{state.interests.add(t);c.setAttribute('aria-pressed','true');}
+  });
+  node.querySelector('#back').onclick=()=>{ state.step='quiz'; state.qIndex=Q.length-1; render(); };
+  node.querySelector('#next').onclick=()=>{ state.otherInterest=node.querySelector('#other').value.trim(); state.step='prefs'; render(); };
+}
+
+function renderPrefs(){
+  const p=state.prefs;
+  const node=el(`<div>
+    <div class="step-count">One last thing</div>
+    <h2>Your animal's group chat</h2>
+    <p class="lede">Each animal has its own group chat. Want us to add you so you can meet the other learners who share your animal?</p>
+    <div class="seg" data-name="joinGroupChat">
+      <button type="button" data-v="yes" aria-pressed="${p.joinGroupChat==='yes'}">Yes, add me!</button>
+      <button type="button" data-v="no" aria-pressed="${p.joinGroupChat==='no'}">Not right now</button>
+    </div>
+    <div class="err" id="err" hidden></div>
+    <div class="nav"><button class="btn btn-ghost" id="back">← Back</button><button class="btn btn-primary" id="finish">See my animal ✦</button></div>
+  </div>`);
+  card.append(node);
+  node.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{
+    p.joinGroupChat=b.dataset.v;
+    node.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed','false'));
+    b.setAttribute('aria-pressed','true');
+  });
+  node.querySelector('#back').onclick=()=>{ state.step='interests'; render(); };
+  node.querySelector('#finish').onclick=()=>{
+    const err=node.querySelector('#err');
+    if(!p.joinGroupChat){ err.textContent="Please pick yes or no to continue."; err.hidden=false; return; }
+    state.result=computeResult(); state.step='reveal'; render(); submit();
+  };
+}
+
+function computeResult(){
+  const tally={E:0,I:0,S:0,N:0,T:0,F:0,J:0,P:0};
+  state.answers.forEach(p=>{ if(p) tally[p]++; });
+  const type=(tally.E>=tally.I?'E':'I')+(tally.S>=tally.N?'S':'N')+(tally.T>=tally.F?'T':'F')+(tally.J>=tally.P?'J':'P');
+  return {type, animal:TYPE_MAP[type], scores:tally};
+}
+
+function renderReveal(){
+  const {animal}=state.result; const A=ANIMALS[animal];
+  const avatar=A.img?`<img src="${A.img}" alt="${animal}" style="width:100%;height:100%;object-fit:cover">`:A.emoji;
+  const node=el(`<div class="reveal" style="--accent:var(${A.v})">
+    <div class="badge">${avatar}</div>
+    <div class="you-are">You are the</div>
+    <h1>${animal}</h1>
+    <div class="func">${A.fn}</div>
+    <p class="desc">${A.desc}</p>
+    <p class="desc" style="margin-top:12px;font-weight:700;color:var(--accent)">${A.note}</p>
+    <div class="power-tag">✦ Your Prisma Power shines as ${A.power}</div>
+    <div class="opp">Your balancing opposite is the <strong>${A.opp}</strong>, a learner who stretches you in the best way.</div>
+    <div><a class="learn-btn" href="${ANIMAL_LINKS[animal]}" target="_blank" rel="noopener noreferrer">Want to learn more about the ${animal}?</a></div>
+    <div class="done-note" id="note">Saving your result…</div>
+  </div>`);
+  card.append(node);
+}
+
+/* ---------- Submit ---------- */
+function buildPayload(){
+  const tzLabel=(TIMEZONES.find(t=>t[0]===state.basics.tz)||["",""])[1];
+  return {
+    firstName:state.basics.firstName, email:state.basics.email,
+    band:state.basics.band, cohort:state.basics.cohort,
+    timezoneOffset:state.basics.tz, timezoneLabel:tzLabel,
+    type:state.result.type, animal:state.result.animal, axisScores:state.result.scores,
+    interests:[...state.interests].concat(state.otherInterest?["Other: "+state.otherInterest]:[]),
+    joinGroupChat:state.prefs.joinGroupChat==='yes',
+    submittedAt:new Date().toISOString()
+  };
+}
+async function submit(){
+  const note=()=>document.getElementById('note');
+  const payload=buildPayload();
+  if(!CONFIG.ENDPOINT_URL){
+    if(note()) note().innerHTML="✓ Preview mode. Your result isn't saved yet. Once the Google setup is done, this quietly saves to your coaches' sheet.";
+    return;
+  }
+  try{
+    await fetch(CONFIG.ENDPOINT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)});
+    if(note()) note().innerHTML="✓ All set! Your coaches will help you find your matches soon.";
+  }catch(e){
+    if(note()) note().innerHTML="We couldn't save your result just now. Please let your coach know.";
+  }
+}
+
+document.addEventListener('keydown',e=>{ if(e.key==='Enter'){ const p=card.querySelector('.btn-primary'); if(p && document.activeElement.tagName!=='BUTTON'){ p.click(); } } });
+
+render();
+</script>
+</body>
+</html>
